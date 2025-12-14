@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Tracker (ETB)</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+
+  <!-- Screenshot library (online required for screenshots) -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+  <h1>Business Tracker</h1>
+
+  <div class="summary">
+    <div class="card income">
+      Income<br><strong id="incomeTotal">ETB 0</strong>
+    </div>
+    <div class="card expense">
+      Expense<br><strong id="expenseTotal">ETB 0</strong>
+    </div>
+    <div class="card balance">
+      Remaining<br><strong id="balance">ETB 0</strong>
+    </div>
+  </div>
+
+  <form id="transactionForm">
+    <input type="text" id="description" placeholder="Description" required>
+    <input type="number" id="amount" placeholder="Amount (ETB)" required>
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <button type="submit">Save Transaction</button>
+  </form>
+
+  <div class="actions">
+    <button class="secondary" onclick="toggleTransactions()">See All Transactions</button>
+    <button onclick="takeScreenshot()">Screenshot</button>
+    <button class="secondary" onclick="exportCSV()">Export CSV</button>
+    <button class="danger" onclick="clearAll()">Clear All</button>
+  </div>
+
+  <div id="transactionsSection" class="hidden">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Amount (ETB)</th>
+        </tr>
+      </thead>
+      <tbody id="transactionsTable"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

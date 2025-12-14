@@ -1,0 +1,106 @@
+:root {
+  --primary: #2563eb;
+  --income: #16a34a;
+  --expense: #dc2626;
+  --bg: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 12px;
+  background: var(--bg);
+}
+
+.app {
+  max-width: 480px;
+  margin: auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.income { background: #dcfce7; color: var(--income); }
+.expense { background: #fee2e2; color: var(--expense); }
+.balance { background: #e0e7ff; color: var(--primary); }
+
+form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #475569;
+}
+
+button.danger {
+  background: var(--expense);
+}
+
+.actions {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th, td {
+  padding: 6px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #f1f5f9;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .summary {
+    grid-template-columns: 1fr;
+  }
+}
